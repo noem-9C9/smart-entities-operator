@@ -1,0 +1,34 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Configuration Smart Area Lights",
+                "description": "Créez vos lumières virtuelles intelligentes en un clic.",
+                "data": {
+                    "all_areas": "Appliquer à toutes les pièces",
+                    "target_areas": "Sélectionnez les pièces",
+                    "label_filter": "Filtrer par Étiquette (Optionnel)",
+                    "use_brightness": "Activer le contrôle de la luminosité",
+                    "use_color_temp": "Activer la température de couleur",
+                    "use_rgb_color": "Activer la couleur RGB"
+                }
+            }
+        },
+        "abort": {
+            "already_configured": "Cet appareil est déjà configuré"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Ajuster les réglages",
+                "data": {
+                    "label_filter": "Filtrer par Étiquette",
+                    "use_brightness": "Activer le contrôle de la luminosité",
+                    "use_color_temp": "Activer la température de couleur",
+                    "use_rgb_color": "Activer la couleur RGB"
+                }
+            }
+        }
+    }
+}

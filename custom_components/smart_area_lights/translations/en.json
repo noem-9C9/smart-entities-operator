@@ -1,0 +1,34 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Smart Area Lights Configuration",
+                "description": "Create your intelligent virtual lights in one click.",
+                "data": {
+                    "all_areas": "Apply to all Areas",
+                    "target_areas": "Select Areas",
+                    "label_filter": "Filter by Label (Optional)",
+                    "use_brightness": "Enable Brightness control",
+                    "use_color_temp": "Enable Color Temperature control",
+                    "use_rgb_color": "Enable RGB Color control"
+                }
+            }
+        },
+        "abort": {
+            "already_configured": "Device is already configured"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Adjust Settings",
+                "data": {
+                    "label_filter": "Filter by Label",
+                    "use_brightness": "Enable Brightness control",
+                    "use_color_temp": "Enable Color Temperature control",
+                    "use_rgb_color": "Enable RGB Color control"
+                }
+            }
+        }
+    }
+}

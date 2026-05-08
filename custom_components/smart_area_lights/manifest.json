@@ -1,0 +1,14 @@
+{
+    "domain": "smart_area_lights",
+    "name": "Smart Area Lights",
+    "documentation": "https://github.com/noem-9C9/smart-area-lights",
+    "issue_tracker": "https://github.com/noem-9C9/smart-area-lights/issues",
+    "dependencies": [],
+    "codeowners": [
+        "@noem-9C9"
+    ],
+    "requirements": [],
+    "iot_class": "local_push",
+    "version": "2.0.0",
+    "config_flow": true
+}
