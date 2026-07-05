@@ -4,17 +4,17 @@ import logging
 from homeassistant.components.switch import SwitchEntity
 from homeassistant.const import STATE_ON
 
-from .entity import SmartAreaGroupEntity, build_group_entities
+from .entity import OperatorGroupEntity, build_group_entities
 
 _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
     """Configure les groupes de switchs depuis les données saisies dans l'UI."""
-    async_add_entities(build_group_entities(hass, config_entry, SmartAreaSwitch, "Switchs"))
+    async_add_entities(build_group_entities(hass, config_entry, OperatorSwitch, "Switchs"))
 
 
-class SmartAreaSwitch(SmartAreaGroupEntity, SwitchEntity):
+class OperatorSwitch(OperatorGroupEntity, SwitchEntity):
     """Groupe de switchs : allumé si au moins un membre est allumé."""
 
     _domain = "switch"

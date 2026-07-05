@@ -1,4 +1,4 @@
-"""Base commune des groupes Smart Area : découverte des membres et écouteurs."""
+"""Base commune des groupes : découverte des membres par pièce/label et écouteurs."""
 import logging
 
 from homeassistant.const import ATTR_SUPPORTED_FEATURES, EVENT_HOMEASSISTANT_STARTED
@@ -35,7 +35,7 @@ def build_group_entities(hass, config_entry, factory, name_prefix):
     return entities
 
 
-class SmartAreaGroupEntity(Entity):
+class OperatorGroupEntity(Entity):
     """Groupe dynamique basé sur une pièce (ou toute la maison) et un label.
 
     Les sous-classes définissent `_domain` et implémentent `_recalc(conf)`
@@ -53,6 +53,7 @@ class SmartAreaGroupEntity(Entity):
         self.config_entry = config_entry
 
         self._tracked_entities = []
+        self._unavailable_entities = []
         self._unsub_track_state = None
 
         scope = self._area_id or "home"
@@ -76,7 +77,9 @@ class SmartAreaGroupEntity(Entity):
             "scope": self._area_id or "home",
             "label_filter": label_id if label_id and label_id != "none" else None,
             "total_members": len(self._tracked_entities),
-            "tracked_entities": self._tracked_entities,
+            # Convention HA : liste des membres (lue par les cartes et l'UI)
+            "entity_id": self._tracked_entities,
+            "unavailable_members": self._unavailable_entities,
         }
         attrs.update(self._platform_attributes())
         return attrs
@@ -180,6 +183,13 @@ class SmartAreaGroupEntity(Entity):
             if set(new_tracked) != set(self._tracked_entities):
                 self._tracked_entities = new_tracked
                 self._setup_listeners()
+
+            # Membres actuellement indisponibles (exposés en attribut, exclus des calculs)
+            self._unavailable_entities = [
+                entity_id for entity_id in self._tracked_entities
+                if (state := self.hass.states.get(entity_id)) is None
+                or state.state in ("unknown", "unavailable")
+            ]
 
             self._recalc(conf)
 

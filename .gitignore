@@ -1,7 +1,3 @@
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
 .DS_Store
-.vscode/
-.antigravity/
-renaming_plan.md

@@ -8,7 +8,7 @@ from homeassistant.components.light import (
 )
 from homeassistant.const import STATE_ON
 
-from .entity import SmartAreaGroupEntity, build_group_entities
+from .entity import OperatorGroupEntity, build_group_entities
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -35,10 +35,10 @@ def _mean(values):
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
     """Configure les groupes de lumières depuis les données saisies dans l'UI."""
-    async_add_entities(build_group_entities(hass, config_entry, SmartAreaLight, "Lumières"))
+    async_add_entities(build_group_entities(hass, config_entry, OperatorLight, "Lumières"))
 
 
-class SmartAreaLight(SmartAreaGroupEntity, LightEntity):
+class OperatorLight(OperatorGroupEntity, LightEntity):
     """Groupe de lumières exposant un jeu de modes canonique.
 
     Plutôt que de propager les modes hétéroclites des membres (hs, xy, rgbww…),

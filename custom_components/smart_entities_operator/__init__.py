@@ -1,4 +1,8 @@
-"""L'intégration Smart Area : groupes par pièce ou maison et capteurs globaux."""
+"""Smart Entities Operator : groupes par pièce/maison et capteurs opérateurs.
+
+Opère automatiquement sur des ensembles d'entités (découverts par label/mot-clé
+ou choisis explicitement) : agrégats, différences, dérivées, moyennes glissantes.
+"""
 from homeassistant.core import HomeAssistant
 from homeassistant.config_entries import ConfigEntry
 

@@ -9,7 +9,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE, STATE_UNKNOWN
 )
 
-from .entity import SmartAreaGroupEntity, build_group_entities
+from .entity import OperatorGroupEntity, build_group_entities
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -21,10 +21,10 @@ GROUP_FEATURES = (
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
     """Configure les groupes de volets depuis les données saisies dans l'UI."""
-    async_add_entities(build_group_entities(hass, config_entry, SmartAreaCover, "Volets"))
+    async_add_entities(build_group_entities(hass, config_entry, OperatorCover, "Volets"))
 
 
-class SmartAreaCover(SmartAreaGroupEntity, CoverEntity):
+class OperatorCover(OperatorGroupEntity, CoverEntity):
     """Groupe de volets : ouvert si au moins un membre est ouvert."""
 
     _domain = "cover"
