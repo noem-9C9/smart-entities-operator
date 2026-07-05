@@ -172,7 +172,8 @@ def _clean(user_input):
 class SmartEntitiesOperatorConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Gère l'interface de configuration depuis l'UI."""
 
-    VERSION = 1
+    # Aligné sur les entrées héritées de smart_area (migration en place).
+    VERSION = 2
 
     @staticmethod
     @callback
