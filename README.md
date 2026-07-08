@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="custom_components/smart_entities_operator/brand/logo.png" alt="Smart Entities Operator" width="320">
+  <img src="https://raw.githubusercontent.com/noem-9C9/smart-entities-operator/main/custom_components/smart_entities_operator/brand/logo.png" alt="Smart Entities Operator" width="320">
 </p>
 
 # Smart Entities Operator
