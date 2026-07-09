@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/noem-9C9/smart-entities-operator/main/custom_components/smart_entities_operator/brand/logo.png" alt="Smart Entities Operator" width="320">
-</p>
-
 # Smart Entities Operator
+
+![Smart Entities Operator](https://github.com/noem-9C9/smart-entities-operator/raw/main/custom_components/smart_entities_operator/brand/logo.png)
 
 Intégration Home Assistant (config par UI) qui **opère automatiquement sur des ensembles d'entités**, découverts par *label*/mot-clé ou choisis explicitement.
 
